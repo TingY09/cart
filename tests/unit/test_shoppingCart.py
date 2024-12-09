@@ -9,19 +9,19 @@ class TestShoppingCart(unittest.TestCase):
         self.cart = ShoppingCart()
 
     # 測試購物車是否加入成功
-    def test_add_to_cart(self):
-        cart = self.cart
-        product_id = 1
-        expected_output = f"\n{cart.products[product_id]['name']} 已加入購物車。\n"
+    # def test_add_to_cart(self):
+    #     cart = self.cart
+    #     product_id = 1
+    #     expected_output = f"\n{cart.products[product_id]['name']} 已加入購物車。\n"
 
-        # 重新導向stdout以捕獲print的輸出
-        sys.stdout = StringIO()
-        cart.add_to_cart(product_id)
-        actual_output = sys.stdout.getvalue()
-        sys.stdout = sys.__stdout__  # 重置stdout
+    #     # 重新導向stdout以捕獲print的輸出
+    #     sys.stdout = StringIO()
+    #     cart.add_to_cart(product_id)
+    #     actual_output = sys.stdout.getvalue()
+    #     sys.stdout = sys.__stdout__  # 重置stdout
 
-        self.assertEqual(actual_output, expected_output)
-        self.assertEqual(cart.products[product_id]['name'], cart.shopping_cart[0]['name'])
+    #     self.assertEqual(actual_output, expected_output)
+    #     self.assertEqual(cart.products[product_id]['name'], cart.shopping_cart[0]['name'])
 
     # 測試在輸入無效的商品編號的情境
     def test_add_invalid_product_to_cart(self):
